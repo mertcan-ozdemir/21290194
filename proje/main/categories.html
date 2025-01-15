@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Game Template">
+    <meta name="keywords" content="Game, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEYM</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloader -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html">
+                            <img src="img/geym2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li>
+                                    <a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./signup.html">Sign Up</a></li>
+                                        <li><a href="./login.html">Login</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <div class="user-menu-container">
+                            <span class="icon_profile user-icon" onclick="toggleUserMenu()"></span>
+                            <div class="user-menu" id="userMenu">
+                                <p id="userGreeting">Merhaba Kullanıcı</p>
+                                <button onclick="logout()">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <!-- Sol Tarafta Oyun Kartları -->
+                <div class="col-lg-8">
+                    <div class="trending__product">
+                        <div class="section-title">
+                            <h4>Games</h4>
+                        </div>
+
+                        <div class="row">
+                            <!-- Oyun kartları buraya eklenecek -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Tarafta Filtreler ve Sidebar -->
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="product__sidebar">
+                        <div class="section-title">
+                            <h5>Filters</h5>
+                        </div>
+                        <div class="filter__buttons">
+                            <button class="filter-btn active" data-filter="*">All</button>
+                            <button class="filter-btn" data-filter=".action">Action</button>
+                            <button class="filter-btn" data-filter=".indie">Indie</button>
+                            <button class="filter-btn" data-filter=".adventure">Adventure</button>
+                            <button class="filter-btn" data-filter=".rpg">RPG</button>
+                            <button class="filter-btn" data-filter=".strategy">Strategy</button>
+                            <button class="filter-btn" data-filter=".shooter">Shooter</button>
+                            <button class="filter-btn" data-filter=".casual">Casual</button>
+                            <button class="filter-btn" data-filter=".simulation">Simulation</button>
+                            <button class="filter-btn" data-filter=".puzzle">Puzzle</button>
+                            <button class="filter-btn" data-filter=".arcade">Arcade</button>
+                            <button class="filter-btn" data-filter=".platformer">Platformer</button>
+                            <button class="filter-btn" data-filter=".racing">Racing</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="page-up">
+            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a href="./index.html"><img src="img/geym2.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer__nav">
+                        <ul>
+                            <li class="active"><a href="./index.html">Homepage</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Search model Begin -->
+        <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch"><i class="icon_close"></i></div>
+                <form class="search-model-form" onsubmit="searchGames(event)">
+                    <input type="text" id="search-input" placeholder="Search here.....">
+                </form>
+            </div>
+            <!-- Arama sonuçları için liste -->
+            <ul id="search-results" style="list-style: none; padding: 0; color: #fff;"></ul>
+        </div>
+    </footer>
+    <!-- Search model end -->
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const username = localStorage.getItem("username");
+            if (username) {
+                document.getElementById("userGreeting").textContent = `Merhaba, ${username}`;
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem("username");
+            alert("Çıkış yapıldı!");
+            window.location.href = "/main/login.html";
+        }
+
+        function toggleUserMenu() {
+            const username = localStorage.getItem("username");
+            if (!username) {
+                window.location.href = "/main/login.html";
+            } else {
+                const userMenu = document.getElementById("userMenu");
+                userMenu.style.display = userMenu.style.display === "block" ? "none" : "block";
+            }
+        }
+    </script>
+</body>
+</html>

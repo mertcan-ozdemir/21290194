@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Game Details">
+    <meta name="keywords" content="Game, Details, HTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Details</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+
+</head>
+
+<body>
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html">
+                            <img src="img/geym2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li>
+                                    <a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./signup.html">Sign Up</a></li>
+                                        <li><a href="./login.html">Login</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <div class="user-menu-container">
+                            <span class="icon_profile user-icon" onclick="toggleUserMenu()"></span>
+                            <div class="user-menu" id="userMenu">
+                                <p id="userGreeting">Merhaba Kullanıcı</p>
+                                <button onclick="logout()">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+    <!-- Game Details Section Begin -->
+    <section class="anime-details spad">
+        <div class="container">
+            <div class="anime__details__content">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="anime__details__pic set-bg" id="game-image" style="background-size: cover;">
+                            <div class="comment"><i class="fa fa-comments"></i> N/A</div>
+                            <div class="view"><i class="fa fa-eye"></i> <span id="game-wishlists">N/A</span></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="anime__details__text">
+                            <div class="anime__details__title">
+                                <h3 id="game-name">Game Name</h3>
+                            </div>
+                            <p id="game-description">Game description will be here.</p>
+                            <div class="anime__details__widget">
+                                <ul>
+                                    <li><span>Release Date:</span> <span id="game-release">N/A</span></li>
+                                    <li><span>Metacritic Score:</span> <span id="game-metacritic">N/A</span></li>
+                                    <li><span>Genres:</span> <span id="game-genres">N/A</span></li>
+                                </ul>
+                            </div>
+
+                            <form id="rating-form">
+                                <input type="hidden" id="game-name-hidden" value="">
+                                <input type="number" id="user-rating" min="0" max="100" placeholder="Enter a score (0-100)" required>
+                                <button type="submit">Submit Rating</button>
+                            </form>
+                            <p id="rating-feedback" style="color: green;"></p>
+                            <p><strong>Average Rating:</strong> <span id="average-rating">N/A</span></p>
+                            <p><strong>Total Votes:</strong> <span id="total-votes">N/A</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yorumlar -->
+            <div class="comments-section">
+                <div class="section-title">
+                    <h5>Reviews</h5>
+                </div>
+                <div id="comments-list">
+                    <!-- Yorumlar buraya JavaScript ile yüklenecek -->
+                </div>
+                <div class="anime__details__form">
+                    <div class="section-title">
+                        <h5>Your Comment</h5>
+                    </div>
+                    <form id="comment-form">
+                        <textarea id="comment-text" placeholder="Your Comment" required></textarea>
+                        <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Game Details Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__nav">
+                <ul>
+                    <li class="active"><a href="./index.html">Homepage</a></li>
+                    <li><a href="./categories.html">Categories</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Rating Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            document.getElementById("game-name").textContent = urlParams.get("name") || "Game Name";
+            document.getElementById("game-image").style.backgroundImage = `url(${urlParams.get("image")})`;
+            document.getElementById("game-description").textContent = urlParams.get("description") || "No description available.";
+            document.getElementById("game-release").textContent = urlParams.get("release") || "N/A";
+            document.getElementById("game-metacritic").textContent = urlParams.get("metacritic") || "N/A";
+            document.getElementById("game-genres").textContent = urlParams.get("genres") || "N/A";
+            document.getElementById("game-wishlists").textContent = urlParams.get("wishlists") || "N/A";
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const username = localStorage.getItem("username");
+            if (username) {
+                document.getElementById("userGreeting").textContent = `Merhaba, ${username}`;
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem("username");
+            alert("Çıkış yapıldı!");
+            window.location.href = "/main/login.html";
+        }
+
+        function toggleUserMenu() {
+            const username = localStorage.getItem("username");
+            if (!username) {
+                window.location.href = "/main/login.html";
+            } else {
+                const userMenu = document.getElementById("userMenu");
+                userMenu.style.display = userMenu.style.display === "block" ? "none" : "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
